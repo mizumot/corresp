@@ -1,6 +1,6 @@
-
-
 library(shiny)
+library(shinyAce)
+
 
 shinyUI(bootstrapPage(
 
@@ -37,7 +37,6 @@ shinyUI(bootstrapPage(
             strong("Scatter plot matrices"),
 
             br(),
-            downloadButton('downloadCorPlot', 'Download the plot as pdf'),
 
             plotOutput("corPlot"),
 
@@ -45,26 +44,20 @@ shinyUI(bootstrapPage(
 
             h3("Results of correspondence analysis"),
             verbatimTextOutput("correspresult.out"),
-            downloadButton('downloadData1', 'Download the data with row scores'),
-            br(),
-            downloadButton('downloadData2', 'Download the data with column scores'),
 
             br(),
             br(),
 
             h3("Plot"),
-            downloadButton('downloadPlot1', 'Download the plot as pdf'),
             plotOutput("rowPlot", height = "500px"),
 
             br(),
 
-            downloadButton('downloadPlot2', 'Download the plot as pdf'),
             plotOutput("colPlot", height = "500px"),
 
             br(),
 
             h4("Biplot"),
-            downloadButton('downloadPlot3', 'Download the plot as pdf'),
             plotOutput("makeBiPlot", height = "700px"),
 
             br(),
